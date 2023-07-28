@@ -1,0 +1,33 @@
+:root {
+  font-size: 24px;
+  --veryDarkCyan: hsl(183, 100%, 15%);
+  --darkGrayishCyan: hsl(186, 14%, 43%);
+  --grayishCyan: hsl(184, 14%, 56%);
+  --lightGrayishCyan: hsl(185, 41%, 84%);
+  --veryLightGrayishCyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+}
+
+body {
+  font-family: 'Space Mono', monospace;
+  background-color: var(--lightGrayishCyan);
+  margin: 0;
+}
+
+main {
+  background-color: var(--white);
+}
+
+header {
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+
+.logo {
+  text-align: center;
+}
+
+.calculator {
+  padding: 32px;
+  border-radius: 25px 25px 0 0;
+}

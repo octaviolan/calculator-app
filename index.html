@@ -3,42 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Tip calculator app</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css" type="text/css">
+  <title>Tip calculator app</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
+  <header>
+    <div class="logo">
+      <img src="./images/logo.svg" alt="Logotipo Splitter">
+    </div>
+  </header>
+  <main class="calculator">
+    <section class="calculator-input">
+      <fieldset>
+        <legend>Bill</legend>
+        <div>
+          <img src="./images/icon-dollar.svg" alt="Icono de dollar">
+          <input type="text" placeholder="0">
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend> Select Tip %</legend>
+        <div class="calculator-input__percent">
+          <button type="button">5%</button>
+          <button type="button">10%</button>
+          <button type="button">15%</button>
+          <button type="button">25%</button>
+          <button type="button">50%</button>
+          <input type="text" placeholder="Custom">
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Number of People</legend>
+        <div>
+          <img src="./images/icon-person.svg" alt="Icono de persona">
+          <input type="text" placeholder="0">
+        </div>
+      </fieldset>
+    </section>
+    <section class="calculator-output">
+      <div class="calculator-output__amount">
+        <p> Tip Amount / person</p>
+        <output><span><img src="./images/icon-dollar.svg" alt="Signo de dollar"></span>0.00</output>
+      </div>
+      <div class="calculator-output__total">
+        <p> Total / person</p>
+        <output><span><img src="./images/icon-dollar.svg" alt="Signo de dollar"></span>0.00</output>
+      </div>
+      <button type="button"> Reset</button>
+    </section>
+  </main>
 
-  Bill
-
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
-
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
   
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
 </body>
 </html>
