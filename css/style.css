@@ -68,7 +68,7 @@ header {
   transform: translateY(-50%);
 }
 
-.calculator-input fieldset div input[type="text"] {
+.calculator-input fieldset div input[type="number"] {
   box-sizing: border-box;
   padding: 6px 18px;
   border-radius: 5px;
@@ -83,11 +83,15 @@ header {
   cursor: pointer;
 }
 
-.calculator-input fieldset div input[type="text"]::-webkit-input-placeholder {
+.calculator-input fieldset div input[type="number"]::-webkit-input-placeholder {
   color: var(--grayishCyan);
 }
 
-.calculator-input fieldset div input[type="text"]:hover {
+.calculator-input fieldset div input[type="number"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+.calculator-input fieldset div input[type="number"]:hover {
   outline: 2px solid var(--cyan);
 }
 
