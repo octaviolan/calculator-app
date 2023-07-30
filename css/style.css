@@ -5,6 +5,8 @@
   --grayishCyan: hsl(184, 14%, 56%);
   --lightGrayishCyan: hsl(185, 41%, 84%);
   --veryLightGrayishCyan: hsl(189, 41%, 97%);
+  --cyan: hsl(172, 67%, 45%);
+  --cyanHover: hsl(172, 61%, 77%);
   --white: hsl(0, 0%, 100%);
 }
 
@@ -30,4 +32,83 @@ header {
 .calculator {
   padding: 32px;
   border-radius: 25px 25px 0 0;
+}
+
+.calculator-input {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.calculator-input fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.calculator-input fieldset legend {
+  padding: 0;
+  margin-bottom: 7px;
+  font-size: 16px;
+  color: var(--darkGrayishCyan);
+}
+
+.calculator-input__percent {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 48px);
+  gap: 16px;
+}
+
+.calculator-input__percent button {
+  border: none;
+  border-radius: 5px;
+  font-size: inherit;
+  font-family: inherit;
+  color: var(--white);
+  background-color: var(--veryDarkCyan);
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.calculator-input__percent button:hover {
+  background-color: var(--cyanHover);
+  color: var(--veryDarkCyan);
+}
+.calculator-input__percent button:active {
+  transform: scale(.98);
+}
+
+.calculator-input fieldset div {
+  position: relative;
+}
+
+.calculator-input fieldset div img {
+  position: absolute;
+  top: 50%;
+  left: 19px;
+  transform: translateY(-50%);
+}
+
+.calculator-input fieldset div input[type="text"] {
+  box-sizing: border-box;
+  padding: 6px 18px;
+  border-radius: 5px;
+  color: var(--veryDarkCyan);
+  width: 100%;
+  text-align: end;
+  font-size: 24px;
+  font-family: inherit;
+  border: none;
+  background-color: var(--veryLightGrayishCyan);
+  outline: none;
+  cursor: pointer;
+}
+
+.calculator-input fieldset div input[type="text"]::-webkit-input-placeholder {
+  color: var(--grayishCyan);
+}
+
+.calculator-input fieldset div input[type="text"]:hover {
+  outline: 2px solid var(--cyan);
 }
