@@ -18,6 +18,9 @@ body {
 
 main {
   background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
 header {
@@ -34,6 +37,7 @@ header {
   border-radius: 25px 25px 0 0;
 }
 
+/*Seccion entrada de los datos*/
 .calculator-input {
   display: flex;
   flex-direction: column;
@@ -51,6 +55,40 @@ header {
   margin-bottom: 7px;
   font-size: 16px;
   color: var(--darkGrayishCyan);
+}
+
+.calculator-input fieldset div {
+  position: relative;
+}
+
+.calculator-input fieldset div img {
+  position: absolute;
+  top: 50%;
+  left: 19px;
+  transform: translateY(-50%);
+}
+
+.calculator-input fieldset div input[type="text"] {
+  box-sizing: border-box;
+  padding: 6px 18px;
+  border-radius: 5px;
+  color: var(--veryDarkCyan);
+  width: 100%;
+  text-align: end;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  background-color: var(--veryLightGrayishCyan);
+  outline: none;
+  cursor: pointer;
+}
+
+.calculator-input fieldset div input[type="text"]::-webkit-input-placeholder {
+  color: var(--grayishCyan);
+}
+
+.calculator-input fieldset div input[type="text"]:hover {
+  outline: 2px solid var(--cyan);
 }
 
 .calculator-input__percent {
@@ -75,40 +113,61 @@ header {
   background-color: var(--cyanHover);
   color: var(--veryDarkCyan);
 }
-.calculator-input__percent button:active {
+.calculator-input__percent button:active,
+.calculator-output button:active {
   transform: scale(.98);
 }
 
-.calculator-input fieldset div {
-  position: relative;
+/*Seccion datos de salida o resultados*/
+.calculator-output {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 37px 23px 24px;
+  border-radius: 15px;
+  background-color: var(--veryDarkCyan);
 }
 
-.calculator-input fieldset div img {
-  position: absolute;
-  top: 50%;
-  left: 19px;
-  transform: translateY(-50%);
+.calculator-output > div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.calculator-input fieldset div input[type="text"] {
-  box-sizing: border-box;
-  padding: 6px 18px;
-  border-radius: 5px;
-  color: var(--veryDarkCyan);
+.calculator-output__amount,
+.calculator-output__total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calculator-output__amount output,
+.calculator-output__total output{
+  font-size: 32px;
+  color: var(--cyan);
+}
+
+.calculator-output div p {
+  margin: 0;
+  font-size: 16px;
+  color: var(--white);
+}
+
+.calculator-output div p span {
+  font-size: 13px;
+  color: var(--darkGrayishCyan);
+}
+
+.calculator-output button {
+  padding: 9px 32px;
   width: 100%;
-  text-align: end;
-  font-size: 24px;
   font-family: inherit;
+  text-transform: uppercase;
+  font-size: 20px;
+  color: var(--veryDarkCyan);
+  border-radius: 5px;
   border: none;
-  background-color: var(--veryLightGrayishCyan);
-  outline: none;
+  background-color: var(--cyan);
   cursor: pointer;
-}
-
-.calculator-input fieldset div input[type="text"]::-webkit-input-placeholder {
-  color: var(--grayishCyan);
-}
-
-.calculator-input fieldset div input[type="text"]:hover {
-  outline: 2px solid var(--cyan);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
