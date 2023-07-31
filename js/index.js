@@ -31,12 +31,17 @@ percents.forEach((percent) => {
 
 //Personalizar porcentaje
 custom.addEventListener('input', (e)=> {
-  if(!pattern.test(e.target.value)) {
-      return
-  } else {
+  if(!pattern.test(people.value)) {
+    error.classList.add('isVisible');
+      setTimeout(() => {
+        error.classList.remove('isVisible');
+      }, 3000)
+  } else if(!pattern.test(e.target.value) || bill.value === '') {
+    return
+  } 
+  else {
      calculator(e);
   }
-
 })
 
 //Funcion que calcula porcentaje
