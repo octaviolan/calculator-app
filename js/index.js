@@ -33,3 +33,10 @@ percents.forEach((percent) => {
     }
   })
 })
+
+reset.addEventListener('click', ()=> {
+  bill.value = 0;
+  people.value = 0;
+  amount.textContent = "$0.00";
+  total.textContent = "$0.00";
+})
