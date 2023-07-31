@@ -19,11 +19,10 @@ const pattern = /^([1-9])([0-9]?)+$/;
 percents.forEach((percent) => {
   percent.addEventListener('click', (e) => {
     if(!pattern.test(people.value)) {
-      error.classList.add('isVisible');
-      setTimeout(() => {
-        error.classList.remove('isVisible');
-      }, 3000)
-    } else {
+      warnning();
+    } else if(!pattern.test(e.target.value) || bill.value === '') {
+      return
+    }  else {
       calculator(e);
     }
   })
@@ -32,10 +31,7 @@ percents.forEach((percent) => {
 //Personalizar porcentaje
 custom.addEventListener('input', (e)=> {
   if(!pattern.test(people.value)) {
-    error.classList.add('isVisible');
-      setTimeout(() => {
-        error.classList.remove('isVisible');
-      }, 3000)
+    warnning();
   } else if(!pattern.test(e.target.value) || bill.value === '') {
     return
   } 
@@ -53,6 +49,13 @@ function calculator(e) {
   const totalPerson = (Number(tipAmount) + (billValue / peopleValue)).toFixed(2);
   amount.textContent = `$${tipAmount}`;
   total.textContent = `$${totalPerson}`;
+}
+
+function warnning() {
+  error.classList.add('isVisible');
+  setTimeout(() => {
+    error.classList.remove('isVisible');
+  }, 3000)
 }
 
 
