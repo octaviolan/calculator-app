@@ -1,0 +1,12 @@
+body {
+  grid-template-rows: 216px 88px 1fr;
+}
+
+header {
+  align-self: end;
+}
+
+.calculator {
+  grid-row: 3;
+  align-self: start;
+}

@@ -1,0 +1,58 @@
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+header {
+  margin: 0;
+}
+
+.calculator {
+  padding-left: 48px;
+  box-sizing: border-box;
+  flex-direction: row;
+  min-width: 920px;
+  gap: 48px;
+  border-radius: 25px;
+}
+
+.calculator-input {
+  max-width: 380px;
+  align-self: center;
+  gap: 40px;
+}
+
+.calculator-input fieldset legend {
+  margin-bottom: 9px;
+}
+
+.calculator-input__percent {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 48px);
+}
+
+.calculator-input__percent input[type="number"] {
+  padding: 6px 14px;
+}
+
+.calculator-output {
+  box-sizing: border-box;
+  padding: 40px;
+  width: 100%;
+  min-height: 417px;
+  gap: 0;
+  justify-content: space-between;
+}
+
+.calculator-output > div {
+  gap: 25px;
+}
+
+.calculator-output__amount output,
+.calculator-output__total output {
+  font-size: 48px;
+}
+
+
+

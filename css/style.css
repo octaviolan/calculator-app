@@ -8,19 +8,13 @@
   --cyan: hsl(172, 67%, 45%);
   --cyanHover: hsl(172, 61%, 77%);
   --white: hsl(0, 0%, 100%);
+  --error: #E17457;
 }
 
 body {
   font-family: 'Space Mono', monospace;
   background-color: var(--lightGrayishCyan);
   margin: 0;
-}
-
-main {
-  background-color: var(--white);
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
 }
 
 header {
@@ -35,6 +29,10 @@ header {
 .calculator {
   padding: 32px;
   border-radius: 25px 25px 0 0;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
 /*Seccion entrada de los datos*/
@@ -68,7 +66,25 @@ header {
   transform: translateY(-50%);
 }
 
-.calculator-input fieldset div input[type="number"] {
+.calculator-input .error {
+  position: absolute;
+  top: -50%;
+  right: 0;
+  margin: 0;
+  display: none;
+  font-size: 13px;
+  color: var(--error);
+}
+
+.calculator-input .error.isVisible {
+  display: block;
+}
+
+.calculator-input .error.isVisible + input {
+  outline: 2px solid var(--error);
+}
+
+input[type="number"] {
   box-sizing: border-box;
   padding: 6px 18px;
   border-radius: 5px;
@@ -83,15 +99,15 @@ header {
   cursor: pointer;
 }
 
-.calculator-input fieldset div input[type="number"]::-webkit-input-placeholder {
+input[type="number"]::-webkit-input-placeholder {
   color: var(--grayishCyan);
 }
 
-.calculator-input fieldset div input[type="number"]::-webkit-inner-spin-button {
+input[type="number"]::-webkit-inner-spin-button {
   display: none;
 }
 
-.calculator-input fieldset div input[type="number"]:hover {
+input[type="number"]:hover {
   outline: 2px solid var(--cyan);
 }
 
@@ -113,7 +129,8 @@ header {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-.calculator-input__percent button:hover {
+.calculator-input__percent button:hover,
+.calculator-output button:hover {
   background-color: var(--cyanHover);
   color: var(--veryDarkCyan);
 }
